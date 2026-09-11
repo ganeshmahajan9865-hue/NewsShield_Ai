@@ -1,0 +1,12 @@
+{
+  "name": "newsshield-ai",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI-Powered News Credibility & Evidence Analysis Platform",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "backend": "backend\\venv\\Scripts\\python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload",
+    "build": "npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend"
+  }
+}
