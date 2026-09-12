@@ -15,13 +15,14 @@ const isDev = import.meta.env.DEV;
 const isLocalhost = (url) => !url || url.includes('localhost') || url.includes('127.0.0.1');
 
 export const API_BASE = (() => {
-  if (rawApiBase && (!import.meta.env.PROD || !isLocalhost(rawApiBase))) {
+  if (rawApiBase && !isLocalhost(rawApiBase)) {
     return rawApiBase.replace(/\/$/, '');
   }
   if (isDev) {
     return 'http://localhost:8000';
   }
-  return '';
+  // In production on Vercel, the backend service is routed at /api
+  return '/api';
 })();
 
 function assertApiConfigured() {
