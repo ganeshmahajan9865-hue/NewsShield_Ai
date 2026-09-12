@@ -1,0 +1,14 @@
+﻿services:
+  - type: web
+    name: newsshield-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: SUPABASE_URL
+        value: https://jzuaqzhijqczhkqauosc.supabase.co
+      - key: SUPABASE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6dWFxemhpanFjemhrcWF1b3NjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkwNTkyOTIsImV4cCI6MjEwNDYzNTI5Mn0.XaTjxAWfoSAOoo4kWk0o82iXV9k29pc21ljV9_4-qAw
